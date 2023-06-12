@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "assets": "^3.0.1",
+    "spur-template": "^1.1.0"
+  }
+}

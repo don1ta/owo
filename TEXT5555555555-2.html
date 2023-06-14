@@ -41,6 +41,35 @@ text-decoration: none;
 }
 
 
+
+    /* Overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        display: none;
+    }
+
+    /* Enlarged Image */
+    .enlarged-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+
+
+
+
+
+
 </style>
 
 <body>
@@ -56,10 +85,10 @@ text-decoration: none;
       <H1 class="titelH1" text-align="content" >SHACO的器官買賣</H1>
      
       <a class="nav-link filter" href="#" data-filter="all">全部</a>
-      <a class="nav-link filter" href="#" data-filter="a">細胞</a>
-      <a class="nav-link filter" href="#" data-filter="b">器官</a>
-      <a class="nav-link filter" href="#" data-filter="c">血管</a>
-
+      <a class="nav-link filter" href="#" data-filter="a">上皮組織</a>
+      <a class="nav-link filter" href="#" data-filter="b">結締組織</a>
+      <a class="nav-link filter" href="#" data-filter="c">肌肉組織</a>
+      <a class="nav-link filter" href="#" data-filter="d">神經組織</a>
       
       <input class="form-control mr-sm-2" id="myInput"  type="text" placeholder="Search">
     
@@ -84,7 +113,7 @@ text-decoration: none;
             </div>
 
 <!-- 放個幻燈片 -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                   <img class="d-block w-100" src="assets/img/0001.jpg" data-src="holder.js/500x200?theme=social"
@@ -111,7 +140,10 @@ text-decoration: none;
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
-            </div>
+            </div>  
+
+
+
 <!-- 結束幻燈片 -->
 <!-- 放個手風琴 -->
  <div class="card-body">
@@ -390,6 +422,42 @@ text-decoration: none;
 
 
 
+<!-- 點擊圖片彈跳出原始大小 -->
+<script>
+  // 获取所有轮播图的项
+  var carouselItems = document.querySelectorAll('.carousel-item');
+
+  // 获取overlay元素和enlarged image元素
+  var overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+
+  var enlargedImage = document.createElement('img');
+  enlargedImage.classList.add('enlarged-image');
+
+  // 为每个轮播图项添加点击事件监听器
+  carouselItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+          var imageUrl = this.querySelector('img').src;
+
+          // 设置enlarged image的src为点击的图片的src
+          enlargedImage.src = imageUrl;
+
+          // 将enlarged image添加到overlay中
+          overlay.appendChild(enlargedImage);
+
+          // 将overlay添加到body中
+          document.body.appendChild(overlay);
+
+          // 显示overlay
+          overlay.style.display = 'block';
+      });
+  });
+
+  // 点击overlay时隐藏overlay
+  overlay.addEventListener('click', function() {
+      overlay.style.display = 'none';
+  });
+</script>
 
 
 

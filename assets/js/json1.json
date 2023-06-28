@@ -1,9 +1,9 @@
 {
-  "company": [{
-
-      "cat": "le",
-
-      "data": [{
+  "company": [
+    {
+      
+      "data": [
+        {
           "classification": "瀝青類",
           "number": "1-1",
           "productName": "馬歇爾試驗儀",
@@ -273,10 +273,9 @@
       ]
     },
     {
-
       "cat": "wl",
-
-      "data": [{
+      "data": [
+        {
           "classification": "混凝土類",
           "number": "2-1",
           "productName": "油壓式粗骨材搖篩機(加門加蓋)",
@@ -826,10 +825,9 @@
     },
 
     {
-
       "cat": "tl",
-
-      "data": [{
+      "data": [
+        {
 
           "classification": "土壤",
           "number": "3-1",
@@ -1071,14 +1069,10 @@
           "filte": "3"
         }
       ]
-
-
     },
 
     {
-
       "cat": "ji",
-
       "data": [
 
         {
@@ -1106,13 +1100,10 @@
           "filte": "4"
         }
       ]
-
-
     },
 
     {
         "cat": "ri",
-
         "data": [
 
         {

@@ -98,7 +98,7 @@
 
       <div class="card">       
       <div id="event">
-      <div id="img01"></div>
+      <!-- <div id="img01"></div> -->
       </div>
       </div>
 
@@ -107,8 +107,8 @@
 
 
 
-
-
+<div></div>
+<div></div>
 <footer >DONITA</footer>
 
 
@@ -238,7 +238,7 @@ html += `
 
           for (var i = 0; i < ary.company.length; i++) {          
             for (var j = 0; j < ary.company[i]['data'].length; j++) {
-
+                   
 
               // console.log(ary.company[i]['data'][j]['filte'])
               // console.log(ary.company[i]['data'][j]['number'])
@@ -270,9 +270,9 @@ html += `
           <!-- 放個手風琴 -->
             <div class="card-body">
                 <div id="accordion" role="tablist">
-                  <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" href="#collapse-1" aria-expanded="false"aria-controls="collapse-1">產品說明</a></h5>
+                  <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" href="#collapse-${ary.company[i]['data'][j]['number']}" aria-expanded="false"aria-controls="collapse-1">產品說明</a></h5>
                 </div>
-                <div id="collapse-1" class="collapse" role="tabpanel" aria-labelledby="heading-1">  
+                <div id="collapse-${ary.company[i]['data'][j]['number']}" class="collapse" role="tabpanel" aria-labelledby="heading-1">  
                     <div class="card-body"> 
                       <ul class="teacher-skill">
                         <li><b style="font-size: 12px;">產品編號：ZC${ary.company[i]['data'][j]['number']}</b></li>
@@ -285,13 +285,15 @@ html += `
             </div>
           <!-- 結束手風琴 -->
         </div>
-    </div>`
+    </div>
+   
+    `
 
     
 
 
 // console.log( ary.company[i]['data'][j]['filte'] )
-console.log( "ary.company[i]['data'][j]['image']}.jpg")
+console.log(ary.company[i]['data'][j]['number'])
 
 
 
@@ -300,6 +302,7 @@ console.log( "ary.company[i]['data'][j]['image']}.jpg")
 html += `
 </div>
 </div>
+
 `
 
 

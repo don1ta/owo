@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
   <!-- <link rel="stylesheet" href="/node_modules/spur-template/dist/css/spur.css"> -->
@@ -75,19 +77,81 @@
   height: 200px;
 }
 
+/* 以上適用 */
+@media (max-width: 768px){
+
+  .teacher-skill li b {
+    font-size: 20px;
+  }
+
+  .card-text P{
+    font-size: 15px;
+
+    
+
+  }
+
+ 
 
 
 
 
+  } 
 
 
 
+  @media (min-width: 400px){
+
+    teacher-skill li b {
+      font-size: 20px;
+    }
+
+    .card-body3 p  {
+      font-size: 25px;
+    }
+
+}
+
+#btnSave{
+  margin: 20px;
+  float: right;
+  
+}
+.modal-body {
+  border-color: #333;
+  border: 1px solid #25283d;
+  padding-bottom: 10px;
+
+}
 
 
 
+@media screen and (min-width:1000px) {
 
+  #btnSave{
+  display: none !important;
+  
+}
 
+}
 
+.card-text{
+  width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    background: #f7f2f0;
+    border: 1px solid #ddd;
+    
+    font-size: 18px;
+    font-weight: 800;
+    color: #25283d;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    
+    z-index: 1;
+}
 
 
 
@@ -118,11 +182,10 @@
 
 
 
-      <!-- <div class="card">        -->
       <div id="event">
-      <!-- <div id="img01"></div> -->
+   
       </div>
-      <!-- </div> -->
+    
 
 
 
@@ -154,21 +217,6 @@
 
 
 
- <!-- 這是圖片迴圈 -->
-   <script>
-    // let img01 = document.getElementById('img01');
-    // let html = img01.innerHTML;
-    // let carouselItems01 = '';
-    // for (let k = 1; k <= 4; k++) {
-    //   if (k === 1) {
-    //     carouselItems01 += '<div class="carousel-item active"><img class="d-block w-100"'  + k +'.jpg" data-src="holder.js/500x200?theme=social" alt="500x200" data-holder-rendered="true" style="width: 500px; height: 200px;"></div>';
-    //   } else {
-    //     carouselItems01 += '<div class="carousel-item"><img class="d-block w-100" src="assets/img/'+ k +'.jpg" data-src="holder.js/500x200?theme=social" alt="500x200" data-holder-rendered="true" style="width: 500px; height: 200px;"></div>';
-    //   }
-    // }
-    // img01.innerHTML = carouselItems01;
-    // console.log(img01.innerHTML);
-  </script> 
 
 
 
@@ -253,6 +301,19 @@
     overlay.addEventListener('click', function () {
       overlay.style.display = 'none';
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 
 
@@ -288,27 +349,37 @@ html += `
 
 
 
-    <div class="rowrow col-lg-4 col-md-12 pt-3 filter-item a   ${ary.company[i]['data'][j]['filte']} ">
+
+
+
+    <div class="rowrow col-lg-6 col-12 pt-3 filter-item a   ${ary.company[i]['data'][j]['filte']} ">
         <div class="card">
-          <div class="card-body">
-            
+          <div class="card-body">    
+      
             <p class="card-text">ZC${ary.company[i]['data'][j]['number']} ${ary.company[i]['data'][j]['productName']}</p>
           </div>
          <!-- 放個幻燈片 -->
+         <!-- down圖片按鈕 -->
+         <div class="modal-body">    
+                <div id="chart${i}${j}">
+                <button id="btnSave" class="btn btn-danger" onclick="screenshot('${i}${j}')">Download</button>
+         <!-- down圖片按鈕 -->        
+
+
           <div id="play${ary.company[i]['data'][j]['number']}" class="carousel slide">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
-                  <img class="d-block w-100 "  src="assets/img/${ary.company[i]['data'][j]['image']}.jpg"  onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                  <img class="d-block mx-auto "  src="assets/img/${ary.company[i]['data'][j]['image']}.jpg"    onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>            
               
                   <div class="carousel-item">
-                    <img class="d-block w-100 " src="assets/img/${ary.company[i]['data'][j]['image']}-2.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖">
+                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-2.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 " src="assets/img/${ary.company[i]['data'][j]['image']}-3.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-3.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 " src="assets/img/${ary.company[i]['data'][j]['image']}-4.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-4.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" " >
                   </div>
 
 
@@ -324,16 +395,20 @@ html += `
               </div>
           <!-- 結束幻燈片 -->
           <!-- 放個手風琴 -->
-            <div class="card-body">
+
+          
+
+
+            <div class="card-body2">
                 <div id="accordion" role="tablist">
-                  <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" href="#collapse-${ary.company[i]['data'][j]['number']}" aria-expanded="false"aria-controls="collapse-1">產品說明</a></h5>
+                  <h5 class="mb-0" style="padding:10px;"><a class="collapsed" data-toggle="collapse" href="#collapse-${ary.company[i]['data'][j]['number']}" aria-expanded="false"aria-controls="collapse-1">產品說明</a></h5>
                 </div>
                 <div id="collapse-${ary.company[i]['data'][j]['number']}" class="collapse" role="tabpanel" aria-labelledby="heading-1">  
-                    <div class="card-body"> 
+                    <div class="card-body3"> 
                       <ul class="teacher-skill">
-                        <li><b style="font-size: 12px;">產品編號：ZC${ary.company[i]['data'][j]['number']}</b></li>
-                        <li><b style="font-size: 12px;">產品名稱：${ary.company[i]['data'][j]['productName']}</b></li>
-                        <li><b style="font-size: 12px;">規&emsp;&emsp;格：</br>${ary.company[i]['data'][j]['size']}</b></li>
+                        <li><b>產品編號：ZC${ary.company[i]['data'][j]['number']}</b></li>
+                        <li><b>產品名稱：${ary.company[i]['data'][j]['productName']}</b></li>
+                        <li><b>規&emsp;&emsp;格：</br>${ary.company[i]['data'][j]['size']}</b></li>
                       </ul>
                       <div ="zh"><P style="color:blue;">*贊誠企業有限公司所有 僅供網路瀏覽使用*</P></div>     
                     </div>
@@ -342,6 +417,11 @@ html += `
           <!-- 結束手風琴 -->
         </div>
     </div>
+
+
+    
+
+  </div></div>
    
     `
 
@@ -371,13 +451,36 @@ html += `
     });
   </script> 
 
-<script>
 
 
 
+    <!-- 資料另存圖片 -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   
-  </script>
+    <script type="text/javascript">
+      function screenshot(e) {
+  
+        html2canvas(document.getElementById('chart' + e), {
+          scrollY: 0
+        }).then(function (canvas) {
+          //生成的图片会根据滚动条位置截图，我滚动条滚动到下面的话，生成的图会有空白,scrollY: 0才可以
+  
+          // document.body.appendChild(canvas);
+          var a = document.createElement('a');
+          a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
+          a.download = 'image.jpg';
+          a.click();
+        });
+      }
 
+
+
+
+
+
+
+
+    </script>
 
 
 

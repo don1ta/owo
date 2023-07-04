@@ -72,59 +72,23 @@
     max-height: 90%;
   }
 
-.d-block {   
-  width: 500px; 
-  height: 200px;
-  margin-top: 10px;
-}
-
-/* 以上適用 */
-@media (max-width: 768px){
-
-  .teacher-skill li b {
-    font-size: 20px;
-  }
-  .card-text P{
-    font-size: 15px;   
-  } } 
 
 
 
-  @media (min-width: 400px){
 
-    teacher-skill li b {
-      font-size: 20px;
-    }
 
-    .card-body3 p  {
-      font-size: 10px;
-    }}
-
+/*下載按鈕APP顯示.網頁隱藏*/
 #btnSave{
-  margin: 10px; 
-  
+  margin: 10px;   
 }
-
-.modal-body {
-  border-color: #333;
-  border: 1px solid #25283d;
-  padding-bottom: 10px;
- 
-}
-
-.modal-body:hover{
-  box-shadow: 2px 2px 0px 2px thistle;
-  
-}
-
-
-
 
 @media screen and (min-width:1000px) {
   #btnSave{
   display: none !important;  
 }}
 
+
+/*外框設計*/
 .card-text{
   width: 100%;
     padding: 10px 0;
@@ -142,7 +106,27 @@
     
     z-index: 1;
 }
+/*移動滑鼠 選框框*/
+.modal-body {
+  border-color: #333;
+  border: 1px solid #25283d;
+  padding-bottom: 10px;
+ 
+}
+.modal-body:hover{
+  box-shadow: 2px 2px 0px 2px thistle;  
+}
 
+.card .modal-body{
+  display: flex;
+  align-items: center;
+
+}
+
+.img-thumbnail{
+  min-height: 600px !important;
+  width: 100% !important;
+}
 
 
 </style>
@@ -206,7 +190,6 @@
   <!-- <link rel="stylesheet" href="https://www.w3schools.cn/lib/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
   <script src="https://www.w3schools.cn/lib/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 
 
 
@@ -350,17 +333,17 @@ html += `
           <div id="play${ary.company[i]['data'][j]['number']}" class="carousel slide">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
-                  <img class="d-block mx-auto "  src="assets/img/${ary.company[i]['data'][j]['image']}.jpg"    onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                  <img class="img-thumbnail "  src="assets/img/${ary.company[i]['data'][j]['image']}.jpg"    onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>            
               
                   <div class="carousel-item">
-                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-2.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                    <img class="img-thumbnail " src="assets/img/${ary.company[i]['data'][j]['image']}-2.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-3.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
+                    <img class="img-thumbnail " src="assets/img/${ary.company[i]['data'][j]['image']}-3.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" >
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block mx-auto " src="assets/img/${ary.company[i]['data'][j]['image']}-4.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" " >
+                    <img class="img-thumbnail " src="assets/img/${ary.company[i]['data'][j]['image']}-4.jpg" onerror="this.src='assets/img/A00.jpg'" alt="沒圖" " >
                   </div>
 
 
@@ -462,6 +445,16 @@ html += `
 
 
     </script>
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>分页示例</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="cardContainer">
+    <!-- 卡片将动态生成并插入到这里 -->
+  </div>
+
+  <div id="pagination">
+    <!-- 分页导航将动态生成并插入到这里 -->
+  </div>
+
+  <script>
+    var jsonData = [
+      { "id": 1, "title": "Card 1", "content": "Content 1" },
+      { "id": 2, "title": "Card 2", "content": "Content 2" },
+      // ... （更多的卡片数据）
+    ];
+
+    var cardsPerPage = 5; // 每页显示的卡片数量
+    var currentPage = 1; // 当前页码
+
+    function renderCards() {
+      var startIndex = (currentPage - 1) * cardsPerPage;
+      var endIndex = startIndex + cardsPerPage;
+      var currentCards = jsonData.slice(startIndex, endIndex);
+
+      var container = document.getElementById("cardContainer");
+      container.innerHTML = ""; // 清空卡片容器
+
+      currentCards.forEach(function(card) {
+        var cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+
+        var titleElement = document.createElement("h2");
+        titleElement.textContent = card.title;
+
+        var contentElement = document.createElement("p");
+        contentElement.textContent = card.content;
+
+        cardElement.appendChild(titleElement);
+        cardElement.appendChild(contentElement);
+
+        container.appendChild(cardElement);
+      });
+    }
+
+    function renderPagination() {
+      var totalPages = Math.ceil(jsonData.length / cardsPerPage);
+
+      var paginationContainer = document.getElementById("pagination");
+      paginationContainer.innerHTML = ""; // 清空分页导航容器
+
+      for (var i = 1; i <= totalPages; i++) {
+        var pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = i;
+
+        if (i === currentPage) {
+          pageLink.classList.add("active");
+        }
+
+        pageLink.addEventListener("click", function() {
+          currentPage = parseInt(this.textContent);
+          renderCards();
+          renderPagination();
+        });
+
+        paginationContainer.appendChild(pageLink);
+      }
+    }
+
+    // 初始化页面
+    renderCards();
+    renderPagination();
+  </script>
+</body>
+</html>

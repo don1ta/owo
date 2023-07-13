@@ -176,12 +176,6 @@
     outline: none;
   }
 
-.pagination{
-justify-content: center;
-    margin: 20px;
-}
-
-
 </style>
 
 <body>
@@ -208,15 +202,13 @@ justify-content: center;
   </nav>
 
 
-
+  <!-- 分頁 -->
+  <div class="pagination-container">
+    <ul class="pagination" id="pagination"></ul>
+  </div>
 
 
   <div id="event">
-  </div>
-
-   <!-- 分頁 -->
-   <div class="pagination-container">
-    <ul class="pagination" id="pagination"></ul>
   </div>
 
 
@@ -369,33 +361,33 @@ justify-content: center;
 </div>
 </div>
 `
- document.getElementById('event').innerHTML = html;
+
+        document.getElementById('event').innerHTML = html;
+
+
+
+
+
         
-        // 分頁功能
-        //20個分一頁
+        // Pagination
         var itemsPerPage = 20;
         var pageCount = Math.ceil($('.filter-item').length / itemsPerPage);
 
-        //生成分頁按鈕的 HTML 代碼
         var paginationHtml = '';
-               for (var k = 0; k < pageCount; k++) {
+        for (var k = 0; k < pageCount; k++) {
           paginationHtml += '<li class="page-item"><a class="page-link" href="#">' + (k + 1) + '</a></li>';
         }
+
         $('#pagination').html(paginationHtml);
 
-
-
-        // 程式隱藏了所有 .filter-item 的元素
+        // Show first page by default
         $('.filter-item').hide();
         $('.filter-item').slice(0, itemsPerPage).show();
 
-        // 當使用者點擊分頁按鈕時
+        // Pagination click event
         $('.page-link').on('click', function (e) {
           e.preventDefault();
 
-
-          //根據 currentPage 和 itemsPerPage 的值，程式計算出需要顯示的項目的起始索引 
-          //startIndex 和結束索引 endIndex。
           var currentPage = parseInt($(this).text());
           var startIndex = (currentPage - 1) * itemsPerPage;
           var endIndex = startIndex + itemsPerPage;
@@ -408,12 +400,16 @@ justify-content: center;
 
 
 
-      
+
+
+
+
 
   </script>
 
   <!-- 資料另存圖片 -->
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
   <script type="text/javascript">
     function screenshot(e) {
 
@@ -429,8 +425,9 @@ justify-content: center;
         a.click();
       });
     }
-  </script>
 
+
+  </script>
 
   <!-- 回TOP -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

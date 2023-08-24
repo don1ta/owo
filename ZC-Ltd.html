@@ -47,6 +47,7 @@
 
   .titelH1 {
     margin-top: 10px;
+    text-align: center;
   }
 
   /* Overlay */
@@ -120,7 +121,7 @@
   }
 
   .img-thumbnail {
-    height: 300px !important;
+    height: 400px !important;
     width: 100% !important;
   }
 
@@ -181,6 +182,17 @@ justify-content: center;
     margin: 20px;
 }
 
+.clearfix {clear: both;}
+.clearfix::after{
+  content:"";
+  display: block;
+ 
+}
+
+.paginationHtml {
+  display: flex;   
+  align-items: center ;
+}
 
 </style>
 
@@ -189,7 +201,7 @@ justify-content: center;
 
   <header>
     <h1 class="titelH1" text-align="content">贊誠企業有限公司</h1>
-  </header>
+
 
 
   <nav class="navbar navbar-light bg-light">
@@ -207,10 +219,10 @@ justify-content: center;
     </form>
   </nav>
 
+</header>
+<div class="clearfix">
 
-
-
-
+<main>
   <div id="event">
   </div>
 
@@ -222,7 +234,12 @@ justify-content: center;
 
   <div></div>
   <div></div>
-  <footer>© Copyright©1993 贊誠企業有限公司. All Rights Reserved
+  </main>
+</div>
+  <footer>
+    © Copyright©1993 贊誠企業有限公司. All Rights Reserved
+    <br>
+    TEL:02-2973-8028  FAX:02-2974-8750  新北市三重區仁孝街60號  NO:84536647
   </footer>
 
   <!--GOTOTOP-->
@@ -378,11 +395,14 @@ justify-content: center;
 
         //生成分頁按鈕的 HTML 代碼
         var paginationHtml = '';
+        paginationHtml += '篩選頁';
                for (var k = 0; k < pageCount; k++) {
           paginationHtml += '<li class="page-item"><a class="page-link" href="#">' + (k + 1) + '</a></li>';
+         
         }
+        paginationHtml += '頁';
         $('#pagination').html(paginationHtml);
-
+ 
 
 
         // 程式隱藏了所有 .filter-item 的元素
@@ -392,7 +412,7 @@ justify-content: center;
         // 當使用者點擊分頁按鈕時
         $('.page-link').on('click', function (e) {
           e.preventDefault();
-
+     
 
           //根據 currentPage 和 itemsPerPage 的值，程式計算出需要顯示的項目的起始索引 
           //startIndex 和結束索引 endIndex。
@@ -452,6 +472,23 @@ justify-content: center;
   </script>
 
 
+
+<script>
+
+String url = "https://don1ta.github.io/owo/ZC-Ltd.html";
+try {
+    Intent i = new Intent("android.intent.action.MAIN");
+    i.setComponent(ComponentName.unflattenFromString("com.android.chrome/com.android.chrome.Main"));
+    i.addCategory("android.intent.category.LAUNCHER");
+    i.setData(Uri.parse(url));
+    startActivity(i);
+}
+catch(ActivityNotFoundException e) {
+    // Chrome is not installed
+    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    startActivity(i);
+}
+</script>
 
 
 

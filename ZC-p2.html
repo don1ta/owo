@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zc">
+<head>
+<title>贊誠企業有限公司</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
+</style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>贊誠<br>儀器</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">關於我</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">經營理念</a> 
+  <a href="ZC-Ltd.html" onclick="w3_close()" target="_blank" class="w3-bar-item w3-button">相關產品</a> 
+  <a href="#contact" onclick="w3_close()"  class="w3-bar-item w3-button">聯絡方式</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">SOME NAME</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row">
+    <div class="w3-third">
+      <img src="assets/img/p2-01.jpg" style="width:100%">
+      <img src="assets/img/p2-03.jpg" style="width:100%">
+      <img src="assets/img/p2-01.jpg" style="width:100%" >
+    </div>
+
+    <div class="w3-third">
+      <img src="assets/img/p2-01.jpg" style="width:100%" >
+      <img src="assets/img/p2-03.jpg" style="width:100%" >
+      <img src="assets/img/p2-01.jpg" style="width:100%" >
+    </div>
+    
+    <div class="w3-third">
+      <img src="assets/img/p2-01.jpg" style="width:100%" >
+      <img src="assets/img/p2-03.jpg" style="width:100%" >
+      <img src="assets/img/p2-01.jpg" style="width:100%" >
+    </div>
+  </div>
+
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4 class="w3-padding-16">經營理念</h4>
+    <!-- <img src="/w3images/avatar_hat.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650"> -->
+    <div class="w3-content w3-justify" style="max-width:600px">
+      
+      <p>
+        二十多年來 贊誠 以「贊」其客禮以「誠」待之。塑造出贊誠的立業精神。並致力於各種地質、土壤、混凝土、油壓試驗儀器之開發、分析、設計、取樣、製造、探測等工程。並以積極的態度和高度的熱忱、供應客戶實驗室、政府單位、各大學地質相關科系之試驗儀器等各項需求，亦有特殊設備委託開發製造、各種機器製圖儀器及五金零件之製造加工買、產品報價代理進出口業務。
+      </p>
+      <p>mail: q50320@gmail.com</p>
+      <p>tel: 02 2973 8028</p>
+      <hr class="w3-opacity">
+      <h4 class="w3-padding-16 w3-center">服務項目</h4>
+      <p class="w3-wide">各種製圖儀器與設備</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:100%">30年多種儀器製造經驗</div>
+      </div>
+      <p class="w3-wide">五金零件製造加工</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:100%">CNC車床技術加工</div>
+      </div>
+      <p class="w3-wide">產品報價代理進出口</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:100%">專業的服務諮詢</div>
+      </div>
+      <p><button class="w3-button  w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom">【估價單2023/03/01版】</button></p>
+      
+      <hr class="w3-opacity">
+
+       <!-- <h4 class="w3-padding-16">How much I charge</h4> -->
+      <div class="w3-row-padding" style="margin:0 -16px">
+   <!--     <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+            <li class="w3-padding-16">Web Design</li>
+            <li class="w3-padding-16">Photography</li>
+            <li class="w3-padding-16">5GB Storage</li>
+            <li class="w3-padding-16">Mail Support</li>
+            <li class="w3-padding-16">
+              <h2>$ 10</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+            </li>
+          </ul>
+        </div> -->
+        
+        <!-- <div class="w3-half">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
+            <li class="w3-padding-16">Web Design</li>
+            <li class="w3-padding-16">Photography</li>
+            <li class="w3-padding-16">50GB Storage</li>
+            <li class="w3-padding-16">Endless Support</li>
+            <li class="w3-padding-16">
+              <h2>$ 25</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:600px">
+      <h4 class="w3-center"><b>聯絡我們</b></h4>
+ 
+
+
+ 
+    <div class="container">
+
+
+    
+
+        <section class="contact" id="contact">
+           
+            <form class="contact-form" enctype="text/plain" accept-charset="utf-8">
+              <input id="nameText" type="text" name="name"  class="w3-input w3-border" value size="60" placeholder="姓名(name)" required>
+              <!-- required 必填欄位 ，placeholder 預設內容-->
+              <input id="emailText" type="email" name="email" class="w3-input w3-border" value size="60" placeholder="郵件(email)" required>
+              <input id="telText" type="tel" name="Phone" class="w3-input w3-border" value size="60" aria-invalid="false" placeholder="電話(phone)" required>
+              <input id="subText" type="text" name="Subject"  class="w3-input w3-border" value size="60" aria-invalid="false" placeholder="主旨(subject)"
+                required>
+              <textarea id="bodyText" name="your-message" cols="40" rows="10" class="w3-input w3-border" aria-required="true" aria-invalid="false"
+                placeholder="您的訊息(Your Message)" required></textarea>
+              <div>
+                <input type="button" value="送出訊息" class="w3-input w3-border"  onclick="submitHandler();">
+                <a id="mailTo"></a>
+              </div>
+            </form>
+          </section>
+
+          <hr class="w3-opacity">
+
+          <div class="row">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14455.230101641051!2d121.497061!3d25.074512!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a92f5330673b%3A0x4420ace2e7786d36!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5LuB5a2d6KGXNjDomZ8!5e0!3m2!1szh-TW!2stw!4v1617690235688!5m2!1szh-TW!2stw" width="100%" height="290px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       </div>
+    
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-grey">  
+   <P class="w3-center"> © Copyright©1993 贊誠企業有限公司. All Rights Reserved
+    <br>
+    TEL:02-2973-8028  FAX:02-2974-8750  新北市三重區仁孝街60號  NO:84536647 </P>
+  </footer>
+  
+ 
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+
+    var initSubject = '',
+          initBody = '';
+    
+        //按下傳送按鈕後執行
+        function submitHandler() {
+          var to = "contact@example.com"; //寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+          var name = nameText.value; //讀取ID為 nameTextuser 物件中的值
+          var email = emailText.value;
+          var tel = telText.value;
+          var subject = subText.value;
+          //把user填的資料都塞到 mail body 中
+          var body = "" + bodyText.value + '%0A%0A%0A'; //%0A是換行 換了三行
+          body += "From：" + nameText.value + '%0A';
+          body += "Email：" + emailText.value + '%0A';
+          body += "Tel：" + telText.value;
+          //傳送的主要程式碼
+          mailTo.href = "mailto:" + to + "?subject=" + subject + "&body=" + body + name + email + tel;
+          mailTo.click();
+        }
+    
+    
+    
+    </script>
+
+</body>
+</html>

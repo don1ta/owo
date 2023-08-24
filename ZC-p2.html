@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img{margin-bottom: -6px; opacity: 0.8;}
 .w3-third img:hover{opacity: 1}
+
 </style>
 </head>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
@@ -42,21 +43,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="assets/img/p2-01.jpg" style="width:100%">
+      <img  class="mouse" src="assets/img/p2-01.jpg"  style="width:100%">
       <img src="assets/img/p2-03.jpg" style="width:100%">
-      <img src="assets/img/p2-01.jpg" style="width:100%" >
+      <!-- <img src="assets/img/p2-01.jpg" style="width:100%" > -->
     </div>
 
     <div class="w3-third">
       <img src="assets/img/p2-01.jpg" style="width:100%" >
       <img src="assets/img/p2-03.jpg" style="width:100%" >
-      <img src="assets/img/p2-01.jpg" style="width:100%" >
+      <!-- <img src="assets/img/p2-01.jpg" style="width:100%" > -->
     </div>
     
     <div class="w3-third">
       <img src="assets/img/p2-01.jpg" style="width:100%" >
       <img src="assets/img/p2-03.jpg" style="width:100%" >
-      <img src="assets/img/p2-01.jpg" style="width:100%" >
+      <!-- <img src="assets/img/p2-01.jpg" style="width:100%" > -->
     </div>
   </div>
 
@@ -198,18 +199,20 @@ function onClick(element) {
     
         //按下傳送按鈕後執行
         function submitHandler() {
-          var to = "contact@example.com"; //寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+          var to = "c150075@staff.1111.com.tw"; //寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
           var name = nameText.value; //讀取ID為 nameTextuser 物件中的值
           var email = emailText.value;
           var tel = telText.value;
           var subject = subText.value;
           //把user填的資料都塞到 mail body 中
           var body = "" + bodyText.value + '%0A%0A%0A'; //%0A是換行 換了三行
-          body += "From：" + nameText.value + '%0A';
+          body +="===您的訊息尚未送出，請確認訊息後按下【傳送】===" + '%0A';
+          body +="From：" + nameText.value + '%0A';
           body += "Email：" + emailText.value + '%0A';
-          body += "Tel：" + telText.value;
-          //傳送的主要程式碼
-          mailTo.href = "mailto:" + to + "?subject=" + subject + "&body=" + body + name + email + tel;
+          body += "Tel：" + telText.value + '%0A';
+          body +="============================================" + '%0A';
+           //傳送的主要程式碼          
+          mailTo.href = "mailto:" + to + "?subject=" + subject + "&body="  + body  ;
           mailTo.click();
         }
     
